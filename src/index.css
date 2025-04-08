@@ -77,6 +77,7 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 15px black;
+  background-color: #242424; /* Body elements appear above header if removed */
 }
 
 #header-subtitles{
@@ -127,4 +128,8 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+#footer{
+  padding: 200px 0px;
 }
