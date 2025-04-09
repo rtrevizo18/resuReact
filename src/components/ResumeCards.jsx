@@ -37,15 +37,27 @@ function EmptyCard() {
   );
 }
 
+function modifyDateString(dateString) {
+  const month = dateString.slice(4, 7);
+  const day = dateString.slice(8, 10);
+  const year = dateString.slice(11);
+
+  const formatDay = day[0] === "0" ? day.slice(1) : day; // Remove leading zero if present
+
+  return `${month} ${formatDay}, ${year}`;
+}
+
 function FilledCard({ title = "Resume Name", date = new Date() }) {
-  const dateString = date.toDateString();
+  const dateString = modifyDateString(date.toDateString());
   return (
     <div className="resume-card">
       <div className="resume-image"></div>
       <div className="resume-content">
         <div className="resume-title">
           <div className="resume-title-text">{title}</div>
-          <ThreeDotSvg svgSize={16} />
+          <button className="resume-settings-button">
+            <ThreeDotSvg svgSize={20} />
+          </button>
         </div>
         <div className="resume-desc">
           <div className="resume-desc-sub">Modified {dateString}</div>
