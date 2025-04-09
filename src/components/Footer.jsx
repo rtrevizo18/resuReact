@@ -38,10 +38,20 @@ export default function Footer() {
         </a>
       </p>
       <div id="social-icons">
-        <a href="" className="social-icon-button">
+        <a
+          href="https://github.com/rtrevizo18"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon-button"
+        >
           <GitHubSvg svgSize={32} />
         </a>
-        <a href="" className="social-icon-button">
+        <a
+          href="www.linkedin.com/in/rtrevizo18"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon-button"
+        >
           <LinkedInSvg svgSize={32} />
         </a>
       </div>
