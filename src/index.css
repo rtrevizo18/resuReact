@@ -114,19 +114,63 @@ button:focus-visible {
 }
 
 .resume-card{
-  background-color: black;
+  background-color: #1a1a1a;
   width: 200px;
   height: 250px;
+  border-radius: 2px;
+}
+
+.resume-image{
+  box-sizing: border-box;
+  height: 70%;
+  border: 1px solid black;
+}
+
+.resume-content{
+  box-sizing: border-box;
+  height: 30%;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 5px 0px 0px 10px;
+}
+
+.resume-title{
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.resume-title-text{
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.resume-title svg{
+  position: absolute;
+  right: 10px;
+}
+
+.resume-desc{
+  font-size: 11px;
+  display: flex;
+  padding: 10px 0px;
+  gap: 50px;
 }
 
 .resume-card.empty{
+  box-sizing: border-box;
   background-color: transparent;
   border: 3px dashed rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 #footer{
