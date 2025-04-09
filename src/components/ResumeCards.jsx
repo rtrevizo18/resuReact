@@ -57,20 +57,18 @@ function FilledCard({ title = "Resume Name", date = new Date() }) {
 
 export default function ResumeCards() {
   return (
-    <div id="body">
-      <div className="resumes">
-        <EmptyCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-        <FilledCard />
-      </div>
+    <div className="resumes">
+      <EmptyCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
+      <FilledCard />
     </div>
   );
 }
