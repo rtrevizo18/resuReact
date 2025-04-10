@@ -74,7 +74,6 @@ button:focus-visible {
 
 #header{
   box-sizing: border-box;
-  position: sticky;
   top:0;
   width: 100%;
   padding: 0px 30px;
@@ -106,13 +105,13 @@ button:focus-visible {
 #body{
   box-sizing: border-box;
   width: 100%;
-  padding: 50px;
+  padding: 50px 150px;
 }
 
 .resumes{
   display: grid;
-  grid-template-columns: repeat(5, 200px);
-  gap: 50px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   place-items: center;
   justify-content: center;
 }
