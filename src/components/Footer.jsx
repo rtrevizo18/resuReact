@@ -47,7 +47,7 @@ export default function Footer() {
           <GitHubSvg svgSize={32} />
         </a>
         <a
-          href="www.linkedin.com/in/rtrevizo18"
+          href="https://www.linkedin.com/in/rtrevizo18"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon-button"
