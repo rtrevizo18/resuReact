@@ -1,0 +1,27 @@
+#header{
+    background-color: #1a1a1a;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 15px black;
+    padding: 1rem;
+  }
+  
+  #header-subtitles{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .header-subtitles-button{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: color ease-in-out 0.25s;
+  }
+  
+  .header-subtitles-button:hover{
+    color: #646cff;
+  }

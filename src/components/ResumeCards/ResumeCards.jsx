@@ -1,3 +1,5 @@
+import "./ResumeCards.css";
+
 function PlusSvg({ svgSize }) {
   return (
     <svg
