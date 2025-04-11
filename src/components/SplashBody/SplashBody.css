@@ -7,7 +7,35 @@
     height: 100vh;
     background-image: linear-gradient(black, rgb(31, 26, 38));
     display: flex;
-    justify-content: center;
     padding: 7rem 0rem;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
 }
+
+.splash-welcome-title{
+    font-size: 65px;
+    animation: hover-in 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes hover-in {
+    from{
+        transform: translateY(-4rem);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+
+.splash-welcome-desc{
+    font-size: 25px;
+    padding: 3rem;
+    text-align: center;
+    animation: hover-in 1.5s ease-out forwards;
+}
+
 
