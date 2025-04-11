@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    animation: hover-in 1.5s ease-out forwards;
 }
 
 .form-title{

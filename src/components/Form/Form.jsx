@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./Form.css";
 
 function FormInputBox({
@@ -85,52 +85,34 @@ function FirstTab() {
 
 function SecondTab() {
   return (
-    <FormTab title="Header">
+    <FormTab title="Summary">
       <FormInputBox
-        inputName="first-name"
+        inputName={"line-" + 1}
         inputType="text"
         inputText="First Name"
         isReq={true}
-      />
-      <FormInputBox
-        inputName="last-name"
-        inputType="text"
-        inputText="Last Name"
-        isReq={true}
-      />
-      <FormInputBox
-        inputName="email"
-        inputType="email"
-        inputText="Email"
-        isReq={true}
-      />
-      <FormInputBox
-        inputName="phone-num"
-        inputType="tel"
-        inputText="Phone Number"
-        isReq={true}
-      />
-      <FormInputBox
-        inputName="location"
-        inputType="text"
-        inputText="City"
-        isReq={false}
-      />
-      <FormInputBox
-        inputName="state"
-        inputType="text"
-        inputText="State/Province"
-        isReq={false}
       />
     </FormTab>
   );
 }
 
 export default function Form() {
-  //   const [formState, setFormState] = useState(0);
+  const [formState, setFormState] = useState(0);
+
+  function handleButtonClick() {
+    setFormState(formState + 1);
+  }
+
   return (
     <form id="header-form" method="#">
       <FirstTab />
+      {formState != 3 ? (
+        <button type="button" onClick={handleButtonClick}>
+          Next
+        </button>
+      ) : (
+        <input type="submit" />
+      )}
       <p id="form-ast-notice">
         <span className="ast">*</span>REQUIRED FIELDS
       </p>
