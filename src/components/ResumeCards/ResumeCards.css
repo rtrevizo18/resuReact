@@ -1,4 +1,6 @@
 .resumes{
+    box-sizing: border-box;
+    padding: 3rem 12rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;

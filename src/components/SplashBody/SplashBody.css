@@ -1,0 +1,13 @@
+#splash-body{
+    display: flex;
+    flex-direction: column;
+}
+
+#splash-welcome{
+    height: 100vh;
+    background-image: linear-gradient(black, rgb(31, 26, 38));
+    display: flex;
+    justify-content: center;
+    padding: 7rem 0rem;
+}
+
