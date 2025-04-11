@@ -1,43 +1,139 @@
-import "./Form.css"
+// import { useState } from "react";
+import "./Form.css";
 
-function Links(){
-    return (
-    <>
-    </>);
+function FormInputBox({
+  inputName,
+  inputType,
+  inputText,
+  isReq,
+  placeHolder = "",
+}) {
+  return (
+    <div className="form-input-elem">
+      <label for={inputName}>
+        <span className="ast">{isReq ? "*" : ""}</span>
+        {inputText}:
+      </label>
+      <input
+        type={inputType}
+        id={inputName}
+        name={inputName}
+        required={isReq ? true : undefined}
+        placeholder={placeHolder}
+      />
+    </div>
+  );
 }
 
+function FormTab({ title, children }) {
+  return (
+    <div className="form-tab">
+      <div className="form-title">{title} Information</div>
+      <div className="form-content">{children}</div>
+    </div>
+  );
+}
 
-export default function Form(){
-    return (
-        <div id="form-body">
-            <h2>Header Information</h2>
-            <form id="header-form" method="#">
-                <div className="form-input-elem">
-                    <label for="first-name"><span className="ast">*</span>First Name:</label>
-                    <input type="text" id="first-name" name="first-name" required/>
-                </div>
-                <div className="form-input-elem">
-                    <label for="last-name"><span className="ast">*</span>Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" required/>
-                </div>
-                <div className="form-input-elem">
-                    <label for="email"><span className="ast">*</span>Email:</label>
-                    <input type="email" id="email" name="email" required/>
-                </div>
-                <div className="form-input-elem">
-                    <label for="phone-num"><span className="ast">*</span>Phone Number:</label>
-                    <input type="tel" id="phone-num" name="phone-num" required/>
-                </div>
-                <div className="form-input-elem">
-                    <label for="location">City:</label>
-                    <input type="text" id="location" name="location"/>
-                </div>
-                <div className="form-input-elem">
-                    <label for="state">State/Province:</label>
-                    <input type="text" id="state" name="state"/>
-                </div>
-            </form>
-            <p id="form-ast-notice"><span className="ast">*</span>REQUIRED FIELDS</p>
-        </div>
-    )
+function FirstTab() {
+  return (
+    <FormTab title="Header">
+      <FormInputBox
+        inputName="first-name"
+        inputType="text"
+        inputText="First Name"
+        isReq={true}
+        placeHolder="Tom"
+      />
+      <FormInputBox
+        inputName="last-name"
+        inputType="text"
+        inputText="Last Name"
+        isReq={true}
+        placeHolder="Hiddleston"
+      />
+      <FormInputBox
+        inputName="email"
+        inputType="email"
+        inputText="Email"
+        isReq={true}
+        placeHolder="example@org.com"
+      />
+      <FormInputBox
+        inputName="phone-num"
+        inputType="tel"
+        inputText="Phone Number"
+        isReq={true}
+        placeHolder="8888888888"
+      />
+      <FormInputBox
+        inputName="location"
+        inputType="text"
+        inputText="City"
+        isReq={false}
+        placeHolder="New York City"
+      />
+      <FormInputBox
+        inputName="state"
+        inputType="text"
+        inputText="State/Province"
+        isReq={false}
+        placeHolder="New York"
+      />
+    </FormTab>
+  );
+}
+
+function SecondTab() {
+  return (
+    <FormTab title="Header">
+      <FormInputBox
+        inputName="first-name"
+        inputType="text"
+        inputText="First Name"
+        isReq={true}
+      />
+      <FormInputBox
+        inputName="last-name"
+        inputType="text"
+        inputText="Last Name"
+        isReq={true}
+      />
+      <FormInputBox
+        inputName="email"
+        inputType="email"
+        inputText="Email"
+        isReq={true}
+      />
+      <FormInputBox
+        inputName="phone-num"
+        inputType="tel"
+        inputText="Phone Number"
+        isReq={true}
+      />
+      <FormInputBox
+        inputName="location"
+        inputType="text"
+        inputText="City"
+        isReq={false}
+      />
+      <FormInputBox
+        inputName="state"
+        inputType="text"
+        inputText="State/Province"
+        isReq={false}
+      />
+    </FormTab>
+  );
+}
+
+export default function Form() {
+  //   const [formState, setFormState] = useState(0);
+  return (
+    <form id="header-form" method="#">
+      <FirstTab />
+      <p id="form-ast-notice">
+        <span className="ast">*</span>REQUIRED FIELDS
+      </p>
+    </form>
+  );
 }
