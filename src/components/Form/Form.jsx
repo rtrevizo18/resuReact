@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
+import { useMultiStepForm } from "../../useMultiStepForm";
 
 function FormInputBox({
   inputName,
@@ -96,23 +97,20 @@ function SecondTab() {
   );
 }
 
+function FormTabular() {
+  <form id="header-form" method="#">
+    <FirstTab />
+    <p id="form-ast-notice">
+      <span className="ast">*</span>REQUIRED FIELDS
+    </p>
+  </form>;
+}
+
 export default function Form() {
-  const [formState, setFormState] = useState(0);
-
-  function handleButtonClick() {
-    setFormState(formState + 1);
-  }
-
+  const { steps, currentStepIndex, step } = useMultiStepForm([<FirstTab />]);
   return (
     <form id="header-form" method="#">
-      <FirstTab />
-      {formState != 3 ? (
-        <button type="button" onClick={handleButtonClick}>
-          Next
-        </button>
-      ) : (
-        <input type="submit" />
-      )}
+      {step}
       <p id="form-ast-notice">
         <span className="ast">*</span>REQUIRED FIELDS
       </p>
