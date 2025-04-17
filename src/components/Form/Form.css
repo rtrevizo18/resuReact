@@ -12,6 +12,8 @@
     flex-direction: column;
     gap: 5rem;
     animation: hover-in 1.5s ease-out forwards;
+    padding: 3rem;
+    border: 0.5px solid black;
 }
 
 .form-title{
@@ -44,6 +46,12 @@
     padding: 1rem 0.5rem;
     font-weight: 500;
     font-size: 20px;
+}
+
+.form-buttons{
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
 }
 
 .ast{

@@ -111,6 +111,10 @@ export default function Form() {
   return (
     <form id="header-form" method="#">
       {step}
+      <div className="form-buttons">
+        <button>Back</button>
+        <button>Next</button>
+      </div>
       <p id="form-ast-notice">
         <span className="ast">*</span>REQUIRED FIELDS
       </p>
