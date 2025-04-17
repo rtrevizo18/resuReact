@@ -1,23 +1,26 @@
+#form-body{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
 #header-form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-    gap: 2rem;
+    gap: 4rem;
+    animation: hover-in 1.5s ease-out forwards;
+    border: 0.5px solid black;
+    padding: 5rem;
 }
 
 .form-tab{
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-    animation: hover-in 1.5s ease-out forwards;
-    padding: 3rem;
-    border: 0.5px solid black;
+    gap: 4rem;
 }
 
 .form-title{
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .form-content{
@@ -29,7 +32,7 @@
 .form-input-elem{
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.5rem;
 }
 
 .form-input-elem label{
@@ -42,16 +45,17 @@
     background-color: #1a1a1a;
     border: none;
     border-radius: 4px;
-    width: 20rem;
-    padding: 1rem 0.5rem;
+    width: 25rem;
+    padding: 0.9rem 1.2rem;
     font-weight: 500;
     font-size: 20px;
 }
 
 .form-buttons{
     display: flex;
-    gap: .5rem;
+    gap: 1rem;
     justify-content: flex-end;
+    padding: 0rem 3rem;
 }
 
 .ast{
@@ -62,5 +66,5 @@
     font-size: 1rem;
     font-style: italic;
     font-weight: 500;
-    padding: 2rem 0;
+    align-self: center;
 }

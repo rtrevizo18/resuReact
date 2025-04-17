@@ -97,27 +97,20 @@ function SecondTab() {
   );
 }
 
-function FormTabular() {
-  <form id="header-form" method="#">
-    <FirstTab />
-    <p id="form-ast-notice">
-      <span className="ast">*</span>REQUIRED FIELDS
-    </p>
-  </form>;
-}
-
 export default function Form() {
   const { steps, currentStepIndex, step } = useMultiStepForm([<FirstTab />]);
   return (
-    <form id="header-form" method="#">
-      {step}
-      <div className="form-buttons">
-        <button>Back</button>
-        <button>Next</button>
-      </div>
-      <p id="form-ast-notice">
-        <span className="ast">*</span>REQUIRED FIELDS
-      </p>
-    </form>
+    <div id="form-body">
+      <form id="header-form" method="#">
+        {step}
+        <div className="form-buttons">
+          <button>Back</button>
+          <button>Next</button>
+        </div>
+        <p id="form-ast-notice">
+          <span className="ast">*</span>REQUIRED FIELDS
+        </p>
+      </form>
+    </div>
   );
 }
