@@ -11,15 +11,15 @@ function FormInputBox({
 }) {
   return (
     <div className="form-input-elem">
-      <label for={inputName}>
-        <span className="ast">{isReq ? "*" : ""}</span>
+      <label htmlFor={inputName}>
+        {isReq && <span className="ast"></span>}
         {inputText}:
       </label>
       <input
         type={inputType}
         id={inputName}
         name={inputName}
-        required={isReq ? true : undefined}
+        required={isReq}
         placeholder={placeHolder}
       />
     </div>
@@ -29,7 +29,7 @@ function FormInputBox({
 function FormTab({ title, children }) {
   return (
     <div className="form-tab">
-      <div className="form-title">{title} Information</div>
+      <div className="form-title">{title}</div>
       <div className="form-content">{children}</div>
     </div>
   );
@@ -37,7 +37,7 @@ function FormTab({ title, children }) {
 
 function FirstTab() {
   return (
-    <FormTab title="Header">
+    <FormTab title="First Info">
       <FormInputBox
         inputName="first-name"
         inputType="text"
@@ -97,16 +97,47 @@ function SecondTab() {
   );
 }
 
+function FormButtons({ isFirstStep, isLastStep, back, next }) {
+  return (
+    <div className="form-buttons">
+      {!isFirstStep && (
+        <button type="button" onClick={back}>
+          Back
+        </button>
+      )}
+      <button type="button" onClick={next}>
+        {isLastStep ? "Finish" : "Next"}
+      </button>
+    </div>
+  );
+}
+
+const tabs = [<FirstTab />, <SecondTab />];
+
 export default function Form() {
-  const { steps, currentStepIndex, step } = useMultiStepForm([<FirstTab />]);
+  const {
+    steps,
+    currentStepIndex,
+    step,
+    isFirstStep,
+    isLastStep,
+    back,
+    next,
+    goTo,
+  } = useMultiStepForm(tabs);
   return (
     <div id="form-body">
       <form id="header-form" method="#">
-        {step}
-        <div className="form-buttons">
-          <button>Back</button>
-          <button>Next</button>
+        <div id="form-step">
+          {currentStepIndex + 1} / {steps.length}
         </div>
+        {step}
+        <FormButtons
+          isFirstStep={isFirstStep}
+          isLastStep={isLastStep}
+          back={back}
+          next={next}
+        />
         <p id="form-ast-notice">
           <span className="ast">*</span>REQUIRED FIELDS
         </p>
