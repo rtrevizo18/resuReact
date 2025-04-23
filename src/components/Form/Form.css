@@ -31,10 +31,16 @@
     font-size: 45px;
 }
 
-.form-content{
+.form-content-first{
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 2.5rem 5rem;
+}
+
+.form-content-second{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .form-input-elem{

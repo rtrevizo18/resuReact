@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Form.css";
 import { useMultiStepForm } from "../../useMultiStepForm";
 
@@ -26,18 +25,18 @@ function FormInputBox({
   );
 }
 
-function FormTab({ title, children }) {
+function FormTab({ title, className, children }) {
   return (
     <div className="form-tab">
       <div className="form-title">{title}</div>
-      <div className="form-content">{children}</div>
+      <div className={className}>{children}</div>
     </div>
   );
 }
 
 function FirstTab() {
   return (
-    <FormTab title="First Info">
+    <FormTab title="First Info" className="form-content-first">
       <FormInputBox
         inputName="first-name"
         inputType="text"
@@ -60,7 +59,7 @@ function FirstTab() {
         placeHolder="example@org.com"
       />
       <FormInputBox
-        inputName="phone-num"
+        inputName="phone_num"
         inputType="tel"
         inputText="Phone Number"
         isReq={true}
@@ -86,11 +85,17 @@ function FirstTab() {
 
 function SecondTab() {
   return (
-    <FormTab title="Summary">
+    <FormTab title="Summary" className="form-content-second">
       <FormInputBox
         inputName={"line-" + 1}
-        inputType="text"
-        inputText="First Name"
+        inputType="textarea"
+        inputText="First"
+        isReq={true}
+      />
+      <FormInputBox
+        inputName={"line-" + 2}
+        inputType="textarea"
+        inputText="Second"
         isReq={true}
       />
     </FormTab>
@@ -112,6 +117,15 @@ function FormButtons({ isFirstStep, isLastStep, back, next }) {
   );
 }
 
+const INITIAL_DATA = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone_num: "",
+  city: "",
+  state: "",
+};
+
 const tabs = [<FirstTab />, <SecondTab />];
 
 export default function Form() {
@@ -125,6 +139,12 @@ export default function Form() {
     next,
     goTo,
   } = useMultiStepForm(tabs);
+
+  function onSubmit(e) {
+    e.preventDefault();
+    next();
+  }
+
   return (
     <div id="form-body">
       <form id="header-form" method="#">
